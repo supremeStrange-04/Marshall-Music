@@ -1,5 +1,5 @@
 alert("Login ID: admin@admin.com\nPassword: admin");
-
+// Alert added
 var temp;
 var isPlaying = false;
 var audio = new Audio();
