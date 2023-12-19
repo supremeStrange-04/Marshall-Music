@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marshall Music</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./login.css" />
+    <link
+      rel="icon"
+      href="./Poster/MARSHALL.png"
+      type="image/png"
+    />
+  </head>
+  <body>
+    <!-- login -->
+    <div class="login" id="login">
+      <div class="container">
+        <h2>Login</h2>
+
+        <form id="form">
+          <div class="form-group">
+            <input type="email" id="email" required />
+            <label for="email">Email</label>
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+
+          <div class="form-group">
+            <input type="password" id="password" required />
+            <label for="password">Password</label>
+            <i class="fa-solid fa-lock"></i>
+          </div>
+
+          <p class="p">
+            <input type="checkbox" /> Remember Me
+            <a href="#">Forget Password</a>
+          </p>
+
+          <input id="btn1" type="submit" value="Login" />
+
+          <p class="p">
+            Don't have a account?
+            <a href="#" onclick="registration()">Register</a>
+          </p>
+        </form>
+        <i class="bi bi-x" id="cross" onclick="close()" style="color: #fff"></i>
+      </div>
+      <div class="music_wave">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+    </div>
+    <!-- login  -->
+    <header>
+      <div class="menu_side">
+        <img
+          src="./Images/Screenshot 2023-11-11 101501.png"
+          alt="Marshall Music"
+        />
+        <div class="playlist">
+          <h4 class="active">
+            <span></span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-music-note-beamed"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2zm9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2z"
+              />
+              <path fill-rule="evenodd" d="M14 11V2h1v9h-1zM6 3v10H5V3h1z" />
+              <path
+                d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4V2.905z"
+              />
+            </svg>
+            Playlist
+          </h4>
+          <h4 onclick="togglePlay(1)">
+            <span></span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-music-note-beamed"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2zm9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2z"
+              />
+              <path fill-rule="evenodd" d="M14 11V2h1v9h-1zM6 3v10H5V3h1z" />
+              <path
+                d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4V2.905z"
+              />
+            </svg>
+            Last Listening
+          </h4>
+          <h4 onclick="togglePlay(33)">
+            <span></span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-music-note-beamed"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2zm9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2z"
+              />
+              <path fill-rule="evenodd" d="M14 11V2h1v9h-1zM6 3v10H5V3h1z" />
+              <path
+                d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4V2.905z"
+              />
+            </svg>
+            Recommended
+          </h4>
+        </div>
+        <div class="menu_song">
+          <li class="songItem">
+            <span>01</span>
+            <img src="./Poster/1.jpg" alt="Girl Poster" />
+            <h5>
+              Heeriye <br />
+              <div class="subtitle">Arjit Singh</div>
+            </h5>
+            <i
+              class="bi playListPlay bi-play-circle-fill"
+              id="a1"
+              onclick="togglePlay(1)"
+            ></i>
+          </li>
+          <li class="songItem">
+            <span>02</span>
+            <img src="./Poster/2.jpg" alt="Girl Poster" />
+            <h5>
+              Ram Siya Ram <br />
+              <div class="subtitle">Bhushan K</div>
+            </h5>
+            <i
+              class="bi playListPlay bi-play-circle-fill"
+              id="a2"
+              onclick="togglePlay(2)"
+            ></i>
+          </li>
+          <li class="songItem">
+            <span>03</span>
+            <img src="./Poster/3.jpg" alt="Girl Poster" />
+            <h5>
+              Guli Mata <br />
+              <div class="subtitle">Shreya Ghoshal</div>
+            </h5>
+            <i
+              class="bi playListPlay bi-play-circle-fill"
+              id="a3"
+              onclick="togglePlay(3)"
+            ></i>
+          </li>
+          <li class="songItem">
+            <span>04</span>
+            <img src="./Poster/4.jpg" alt="Girl Poster" />
+            <h5>
+              Raataan Lambiyan <br />
+              <div class="subtitle">Jubin Nautiyal</div>
+            </h5>
+            <i
+              class="bi playListPlay bi-play-circle-fill"
+              id="a4"
+              onclick="togglePlay(4)"
+            ></i>
+          </li>
+          <li class="songItem">
+            <span>05</span>
+            <img src="./Poster/5.jpg" alt="Girl Poster" />
+            <h5>
+              Pyaar Hota Kayi Baar Hai  <br />
+              <div class="subtitle">Arjit | Pritam | Amitabh</div>
+            </h5>
+            <i
+              class="bi playListPlay bi-play-circle-fill"
+              id="a5"
+              onclick="togglePlay(5)"
+            ></i>
+          </li>
+          <li class="songItem">
+            <span>06</span>
+            <img src="./Poster/6.jpg" alt="Girl Poster" />
+            <h5>
+              Khalsi <br />
+              <div class="subtitle">Aditya Gadhvi x Anchit</div>
+            </h5>
+            <i
+              class="bi playListPlay bi-play-circle-fill"
+              id="a6"
+              onclick="togglePlay(6)"
+            ></i>
+          </li>
+          <li class="songItem">
+            <span>07</span>
+            <img src="./Poster/7.jpg" alt="Girl Poster" />
+            <h5>
+              Chaleya <br />
+              <div class="subtitle">Arjit | Shilpa Rao</div>
+            </h5>
+            <i
+              class="bi playListPlay bi-play-circle-fill"
+              id="a7"
+              onclick="togglePlay(7)"
+            ></i>
+          </li>
+          <li class="songItem">
+            <span>08</span>
+            <img src="./Poster/8.jpg" alt="Girl Poster" />
+            <h5>
+              Check Kar <br />
+              <div class="subtitle">Permish Verma</div>
+            </h5>
+            <i
+              class="bi playListPlay bi-play-circle-fill"
+              id="a8"
+              onclick="togglePlay(8)"
+            ></i>
+          </li>
+          <li class="songItem">
+            <span>09</span>
+            <img src="./Poster/9.jpg" alt="Girl Poster" />
+            <h5>
+              Cheques  <br />
+              <div class="subtitle">Subh</div>
+            </h5>
+            <i
+              class="bi playListPlay bi-play-circle-fill"
+              id="a9"
+              onclick="togglePlay(9)"
+            ></i>
+          </li>
+          <li class="songItem">
+            <span>10</span>
+            <img src="./Poster/10.jpg" alt="Girl Poster" />
+            <h5>
+              Rolex Theme Song <br />
+              <div class="subtitle">Anirudh Ravichander</div>
+            </h5>
+            <i
+              class="bi playListPlay bi-play-circle-fill"
+              id="a10"
+              onclick="togglePlay(10)"
+            ></i>
+          </li>
+        </div>
+      </div>
+      <div class="song_side">
+        <nav>
+          <ul>
+            <li>Discover <span></span></li>
+            <li>MY LIBRARY</li>
+            <li>RADIO</li>
+          </ul>
+          <div class="search">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search Music..." id="searchBox"/>
+            <div class="searchResults"></div>
+          </div>
+          <div class="user">
+            <img src="./Images/on my way.jpg" alt="" title="Lokesh Parate" onclick="openloginpage()"/>
+          </div>
+        </nav>
+        <div class="content">
+          <h1>Marshall Music !</h1>
+          <p>
+            Experience the rhythm of life !<br />
+            Where music meets soul . . . 
+          </p>
+          <div class="buttons">
+            <a href="#" class="main_button" id="play" onclick="togglePlay(1)">PLAY</a>
+            <a href="#" class="main_button" id="follow">FOLLOW</a>
+          </div>
+        </div>
+        <div class="popular_song">
+          <div class="h4">
+            <h4>Popular Song</h4>
+            <div class="btn_s">
+              <i class="bi bi-arrow-left-short" id="pop_song_left"></i>
+              <i class="bi bi-arrow-right-short" id="pop_song_right"></i>
+            </div>
+          </div>
+          <div class="pop_song" id="pop_song">
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/11.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a11" onclick="togglePlay(11)"></i>
+              </div>
+              <h5>
+                My Life In This Town <br />
+                <div class="subtitle">Nikita Gandhi</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/12.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a12" onclick="togglePlay(12)"></i>
+              </div>
+              <h5>
+                On My Way <br />
+                <div class="subtitle">Alan Walker</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/13.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a13" onclick="togglePlay(13)"></i>
+              </div>
+              <h5>
+                Bilionera <br />
+                <div class="subtitle">Otilia Bruma</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/14.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a14" onclick="togglePlay(14)"></i>
+              </div>
+              <h5>
+                Warhan <br />
+                <div class="subtitle">Randall</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/15.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a15" onclick="togglePlay(15)"></i>
+              </div>
+              <h5>
+                Aam Jahe Munde <br />
+                <div class="subtitle">Parmish Verma</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/16.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a16" onclick="togglePlay(16)"></i>
+              </div>
+              <h5>
+                Bad Boy <br />
+                <div class="subtitle">Tungevaag | Raaban</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/17.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a17" onclick="togglePlay(17)"></i>
+              </div>
+              <h5>
+                Mask Off <br />
+                <div class="subtitle">Future</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/18.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a18" onclick="togglePlay(18)"></i>
+              </div>
+              <h5>
+                Sugar and Brownies <br />
+                <div class="subtitle">Dharia</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/19.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a19" onclick="togglePlay(19)"></i>
+              </div>
+              <h5>
+                One Night in Dubai <br />
+                <div class="subtitle">Aarash</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/20.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a20" onclick="togglePlay(20)"></i>
+              </div>
+              <h5 id="songItem">
+                Headlight <br />
+                <div class="subtitle">Alan Walker | Alok</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/21.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a21" onclick="togglePlay(21)"></i>
+              </div>
+              <h5>
+                One Love <br />
+                <div class="subtitle">Beyond the Blue</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/22.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a22" onclick="togglePlay(22)"></i>
+              </div>
+              <h5>
+                Aigiri Nandini <br />
+                <div class="subtitle">Rajalakshmi Sanjay</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/23.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a23" onclick="togglePlay(23)"></i>
+              </div>
+              <h5>
+                Tumse Milke Dil ka <br />
+                <div class="subtitle">Sonu Nigam</div>
+              </h5>
+            </li>
+          </div>
+        </div>
+        <!-- remix -->
+        <div class="popular_song">
+          <div class="h4">
+            <h4>Remix N Fun</h4>
+            <div class="btn_s">
+              <i
+                class="bi bi-arrow-left-short remix_song_left"
+                id="pop_song_left"
+                onclick="scrollleft()"
+              ></i>
+              <i
+                class="bi bi-arrow-right-short remix_song_right"
+                id="pop_song_right"
+                onclick="scrollright()"
+              ></i>
+            </div>
+          </div>
+          <div class="pop_song rem_song" id="pop_song">
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/24.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a24" onclick="togglePlay(24)"></i>
+              </div>
+              <h5>
+                Doope Shope <br />
+                <div class="subtitle">Honey Singh | Modi</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/25.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a25" onclick="togglePlay(25)"></i>
+              </div>
+              <h5>
+                Bam Leheri <br />
+                <div class="subtitle">Kailash Kher</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/26.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a26" onclick="togglePlay(26)"></i>
+              </div>
+              <h5>
+                Mera Intkam Dekhegi <br />
+                <div class="subtitle">Krishna Beuraa</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/27.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a27" onclick="togglePlay(27)"></i>
+              </div>
+              <h5>
+                Cheques <br />
+                <div class="subtitle">Subh</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/28.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a28" onclick="togglePlay(28)"></i>
+              </div>
+              <h5>
+                295 <br />
+                <div class="subtitle">Siddhu Moosewala</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/29.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a29" onclick="togglePlay(29)"></i>
+              </div>
+              <h5>
+                Nagada Remix <br />
+                <div class="subtitle">Sush and Yohan</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/30.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a30" onclick="togglePlay(30)"></i>
+              </div>
+              <h5>
+                Baby Remix <br />
+                <div class="subtitle">Sush and Yohan</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/31.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a31" onclick="togglePlay(31)"></i>
+              </div>
+              <h5>
+                End 2022 Remix <br />
+                <div class="subtitle">Sush and Yohan</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/32.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a32" onclick="togglePlay(32)"></i>
+              </div>
+              <h5>
+                Baharla Madhumas Remix <br />
+                <div class="subtitle">Sush and Yohan</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/33.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a33" onclick="togglePlay(33)"></i>
+              </div>
+              <h5>
+                Beggin You <br />
+                <div class="subtitle">Sush and Yohan</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/34.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a34" onclick="togglePlay(34)"></i>
+              </div>
+              <h5>
+                Navratri Nagada Remix <br />
+                <div class="subtitle">Sush and Yohan</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/35.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a35" onclick="togglePlay(35)"></i>
+              </div>
+              <h5>
+                Anushqa | Something is Common <br />
+                <div class="subtitle">Alan Walker</div>
+              </h5>
+            </li>
+            <li class="songItem">
+              <div class="img_play">
+                <img src="./Poster/36.jpg" alt="Girl Poster" />
+                <i class="bi playListPlay bi-play-circle-fill" id="a36" onclick="togglePlay(36)"></i>
+              </div>
+              <h5>
+                2021 Year End <br />
+                <div class="subtitle">Sush and Yohan</div>
+              </h5>
+            </li>
+          </div>
+        </div>
+        <div class="popular_artists">
+          <div class="h4">
+            <h4>Popular Artists</h4>
+            <div class="btn_s">
+              <i class="bi bi-arrow-left-short" id="pop_art_left"></i>
+              <i class="bi bi-arrow-right-short" id="pop_art_right"></i>
+            </div>
+          </div>
+          <div class="item Artists_bx">
+            <li>
+              <img src="Images/Selena.jpg" alt="" title="Selena Gomez" onclick="window.open('https:\/\/music.youtube.com/channel/UCeBYRgPhy8kcRmIGQWKuqdQ');" />
+            </li>
+            <li>
+              <img src="Images/Arman.jpg" alt="" title="Arman Malik" onclick="window.open('https:\/\/music.youtube.com/channel/UCZc_y0R_mSKeNtkcuhgLxCA');" />
+            </li>
+            <li>
+              <img src="Images/Arjit.jpg" alt="" title="Arjit Singh" onclick="window.open('https:\/\/music.youtube.com/channel/UCDxKh1gFWeYsqePvgVzmPoQ');" />
+            </li>
+            <li>
+              <img src="Images/Bhanushali.jpg" alt="" title="Dhvani Bhanushali" onclick="window.open('https:\/\/music.youtube.com/channel/UCexov5cPsSaOLqUEUiy1z-g');" />
+            </li>
+            <li>
+              <img src="Images/Alan Walker.jpg" alt="" title="Alan Walker" onclick="window.open('https:\/\/music.youtube.com/channel/UCaXJEi-wOOVe2eZZHzyz4mQ');" />
+            </li>
+            <li>
+              <img src="Images/Badshah.jpg" alt="" title="Badshah" onclick="window.open('https:\/\/music.youtube.com/channel/UCVfSAUepe_FzP6ge6WexO5Q');" />
+            </li>
+            <li>
+              <img src="Images/Justin.jpg" alt="" title="Justin Bieber" onclick="window.open('https:\/\/music.youtube.com/channel/UCGvj8kfUV5Q6lzECIrGY19g');" />
+            </li>
+            <li>
+              <img src="Images/Kakkar.jpg" alt="" title="Neha Kakkar" onclick="window.open('https:\/\/music.youtube.com/channel/UCsmm-jjSLILh12mZ2aR6Qrg');" />
+            </li>
+            <li>
+              <img src="Images/Katy .png" alt="" title="Katy Pery" onclick="window.open('https:\/\/music.youtube.com/channel/UC_7s69e1mDS3lgcTMJEPjCg');" />
+            </li>
+            <li>
+              <img src="Images/King.jpg" alt="" title="King" onclick="window.open('https:\/\/music.youtube.com/channel/UC2ceGDkMiX_apj3yBciUTsA');" />
+            </li>
+            <li>
+              <img src="Images/Nigam.jpg" alt="" title="Sonu Nigam" onclick="window.open('https:\/\/music.youtube.com/channel/UCsC4u-BJAd4OX1hJXtwXSOQ');" />
+            </li>
+            <li>
+              <img src="Images/Rahman.jpg" alt="" title="A.R. Rahman" onclick="window.open('https:\/\/music.youtube.com/channel/UCtJe0RYzgPddQXKtWduxz_w');" />
+            </li>
+            <li>
+              <img src="Images/Taylor.jpg" alt="" title="Taylor Swift" onclick="window.open('https:\/\/music.youtube.com/channel/UCPC0L1d253x-KuMNwa05TpA');" />
+            </li>
+            <li>
+              <img src="Images/Shreya.jpg" alt="" title="Shreya Ghoshal" onclick="window.open('https:\/\/music.youtube.com/channel/UCrC-7fsdTCYeaRBpwA6j-Eg');" />
+            </li>
+          </div>
+        </div>
+        <!-- remix start -->
+        <!-- <div class="remix">
+            <div class="h4">
+                <h4 style="margin-bottom: 15px;">Remix N Fun</h4>
+                <div class="btn_s">
+                    <i class="bi bi-arrow-left-short" id="pop_song_left"></i>
+                    <i class="bi bi-arrow-right-short" id="pop_song_right"></i>
+                </div>
+            </div>
+            <div class="pop_song" id="pop_song">
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="./Images/on my way.jpg" alt="Girl Poster">
+                        <i class="bi playListPlay bi-play-circle-fill" id="11"></i>
+                    </div>
+                    <h5>On My Way <br> <div class="subtitle">Alan Walker</div></h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="./Images/on my way.jpg" alt="Girl Poster">
+                        <i class="bi playListPlay bi-play-circle-fill" id="12"></i>
+                    </div>
+                    <h5>On My Way <br> <div class="subtitle">Alan Walker</div></h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="./Images/on my way.jpg" alt="Girl Poster">
+                        <i class="bi playListPlay bi-play-circle-fill" id="13"></i>
+                    </div>
+                    <h5>On My Way <br> <div class="subtitle">Alan Walker</div></h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="./Images/on my way.jpg" alt="Girl Poster">
+                        <i class="bi playListPlay bi-play-circle-fill" id="14"></i>
+                    </div>
+                    <h5>On My Way <br> <div class="subtitle">Alan Walker</div></h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="./Images/on my way.jpg" alt="Girl Poster">
+                        <i class="bi playListPlay bi-play-circle-fill" id="15"></i>
+                    </div>
+                    <h5>On My Way <br> <div class="subtitle">Alan Walker</div></h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="./Images/on my way.jpg" alt="Girl Poster">
+                        <i class="bi playListPlay bi-play-circle-fill" id="16"></i>
+                    </div>
+                    <h5>On My Way <br> <div class="subtitle">Alan Walker</div></h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="./Images/on my way.jpg" alt="Girl Poster">
+                        <i class="bi playListPlay bi-play-circle-fill" id="17"></i>
+                    </div>
+                    <h5>On My Way <br> <div class="subtitle">Alan Walker</div></h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="./Images/on my way.jpg" alt="Girl Poster">
+                        <i class="bi playListPlay bi-play-circle-fill" id="18"></i>
+                    </div>
+                    <h5>On My Way <br> <div class="subtitle">Alan Walker</div></h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="./Images/on my way.jpg" alt="Girl Poster">
+                        <i class="bi playListPlay bi-play-circle-fill" id="19"></i>
+                    </div>
+                    <h5>On My Way <br> <div class="subtitle">Alan Walker</div></h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="./Images/on my way.jpg" alt="Girl Poster">
+                        <i class="bi playListPlay bi-play-circle-fill" id="20"></i>
+                    </div>
+                    <h5>On My Way <br> <div class="subtitle">Alan Walker</div></h5>
+                </li>
+                <li class="songItem">
+                    <div class="img_play">
+                        <img src="./Images/on my way.jpg" alt="Girl Poster">
+                        <i class="bi playListPlay bi-play-circle-fill" id="21"></i>
+                    </div>
+                    <h5>On My Way <br> <div class="subtitle">Alan Walker</div></h5>
+                </li>
+            </div>
+        </div> -->
+        <!-- remix end  -->
+      </div>
+
+      <div class="master_play">
+        <div class="wave" id="wave">
+          <div class="wave1"></div>
+          <div class="wave1"></div>
+          <div class="wave1"></div>
+        </div>
+        <img src="./Images/on my way.jpg" alt="" id="poster_master_play" />
+        <h5 id="title">
+          Headlight
+          <div class="subtitle">Alan WWW</div>
+        </h5>
+        <div class="icon">
+          <i class="bi shuffle bi-music-note-beamed">next</i>
+          <i class="bi bi-skip-start-fill" id="back" onclick="previous()"></i>
+          <i class="bi bi-play-fill" id="masterPlay"></i>
+          <i class="bi bi-skip-end-fill" id="next" onclick="next()"></i>
+          <i class="bi bi-cloud-arrow-down-fill" id="download_music"></i>
+        </div>
+        <span id="currentStart">0:00</span>
+        <div class="bar">
+          <input type="range" id="seek" min="0" max="100" />
+          <div class="bar2" id="bar2"></div>
+          <div class="dot"></div>
+        </div>
+        <span id="currentEnd">0:30</span>
+        <div class="vol">
+          <i class="bi bi-volume-down-fill" id="vol_icon"></i>
+          <input type="range" min="0" max="100" id="vol" />
+          <div class="vol_bar"></div>
+          <div class="dot" id="vol_dot"></div>
+        </div>
+      </div>
+    </header>
+
+    <script type="text/javascript" src="app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
