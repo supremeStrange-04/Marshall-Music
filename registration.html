@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marshall Music</title>
 
-    <script type="module" src="login.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js"></script>
+
+    <script type="module" src="registration.js"></script>
 
     <link
       rel="stylesheet"
@@ -22,6 +26,12 @@
         <h2>Login</h2>
 
         <form id="form">
+          <div class="form-group">
+            <input type="text" id="username" required />
+            <label for="username">Name</label>
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+
           <div class="form-group">
             <input type="email" id="email" required />
             <label for="email">Email</label>
@@ -42,11 +52,11 @@
           <input id="btn1" type="submit" value="Login" />
 
           <p class="p">
-            Don't have a account?
-            <a href="registration.html">Register</a>
+            Already have a account?
+            <a href="index.html">Login</a>
           </p>
         </form>
-        <i class="bi bi-x" id="cross" style="color: #fff"></i>
+        <i class="bi bi-x" id="cross" onclick="close()" style="color: #fff"></i>
       </div>
       <div class="music_wave">
         <div class="wave"></div>

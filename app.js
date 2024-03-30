@@ -1,5 +1,3 @@
-alert("Login ID: admin@admin.com\nPassword: admin");
-// Alert added
 var temp;
 var isPlaying = false;
 var audio = new Audio();
@@ -102,117 +100,123 @@ const songs = [
   },
   {
     id: "a17",
-    songName: `Sugar & Brownies<br>
-    <div class="subtitle">Dharia</div>`,
+    songName: `Mask Off<br>
+    <div class="subtitle">Future</div>`,
     poster: "Poster/17.jpg",
   },
   {
     id: "a18",
-    songName: `One Night in Dubai<br>
-    <div class="subtitle">Alan Walker</div>`,
+    songName: `Sugar & Brownies<br>
+    <div class="subtitle">Dharia</div>`,
     poster: "Poster/18.jpg",
   },
   {
     id: "a19",
-    songName: `Headlight<br>
+    songName: `One Night in Dubai<br>
     <div class="subtitle">Alan Walker</div>`,
     poster: "Poster/19.jpg",
   },
   {
     id: "a20",
-    songName: `One Love<br>
-    <div class="subtitle">Beyond the Blue</div>`,
+    songName: `Headlight<br>
+    <div class="subtitle">Alan Walker</div>`,
     poster: "Poster/20.jpg",
   },
   {
     id: "a21",
-    songName: `Aigiri Nandini<br>
-    <div class="subtitle">Rajlakshmi Sanjay</div>`,
+    songName: `One Love<br>
+    <div class="subtitle">Beyond the Blue</div>`,
     poster: "Poster/21.jpg",
   },
   {
     id: "a22",
-    songName: `Tumse Milke Dil Ka<br>
-    <div class="subtitle">Sonu Nigam</div>`,
+    songName: `Aigiri Nandini<br>
+    <div class="subtitle">Rajlakshmi Sanjay</div>`,
     poster: "Poster/22.jpg",
   },
   {
     id: "a23",
-    songName: `Doope Shope<br>
-    <div class="subtitle">Honey Singh</div>`,
+    songName: `Tumse Milke Dil Ka<br>
+    <div class="subtitle">Sonu Nigam</div>`,
     poster: "Poster/23.jpg",
   },
   {
     id: "a24",
-    songName: `Bam Leheri<br>
-    <div class="subtitle">Kailash Kher</div>`,
+    songName: `Doope Shope<br>
+    <div class="subtitle">Honey Singh</div>`,
     poster: "Poster/24.jpg",
   },
   {
     id: "a25",
-    songName: `Mera Intkam Dekhegi<br>
-    <div class="subtitle">Krishna Beuraa</div>`,
+    songName: `Bam Leheri<br>
+    <div class="subtitle">Kailash Kher</div>`,
     poster: "Poster/25.jpg",
   },
   {
     id: "a26",
-    songName: `Cheques<br>
-    <div class="subtitle">Subh</div>`,
+    songName: `Mera Intkam Dekhegi<br>
+    <div class="subtitle">Krishna Beuraa</div>`,
     poster: "Poster/26.jpg",
   },
   {
     id: "a27",
-    songName: `295<br>
-    <div class="subtitle">Siddhu Moosewala</div>`,
+    songName: `Cheques<br>
+    <div class="subtitle">Subh</div>`,
     poster: "Poster/27.jpg",
   },
   {
     id: "a28",
-    songName: `Nagada Remix<br>
-    <div class="subtitle">Sush and Yohan</div>`,
+    songName: `295<br>
+    <div class="subtitle">Siddhu Moosewala</div>`,
     poster: "Poster/28.jpg",
   },
   {
     id: "a29",
-    songName: `Baby Remix<br>
+    songName: `Nagada Remix<br>
     <div class="subtitle">Sush and Yohan</div>`,
     poster: "Poster/29.jpg",
   },
   {
     id: "a30",
-    songName: `End 2022 Remix<br>
+    songName: `Baby Remix<br>
     <div class="subtitle">Sush and Yohan</div>`,
     poster: "Poster/30.jpg",
   },
   {
     id: "a31",
-    songName: `Baharla Madhumas Ha<br>
+    songName: `End 2022 Remix<br>
     <div class="subtitle">Sush and Yohan</div>`,
     poster: "Poster/31.jpg",
   },
   {
     id: "a32",
-    songName: `Beggin You<br>
+    songName: `Baharla Madhumas Ha<br>
     <div class="subtitle">Sush and Yohan</div>`,
     poster: "Poster/32.jpg",
   },
   {
     id: "a33",
-    songName: `Navratri Nagada Remix<br>
+    songName: `Beggin You<br>
     <div class="subtitle">Sush and Yohan</div>`,
     poster: "Poster/33.jpg",
   },
   {
     id: "a34",
-    songName: `Anushqa | Something Is Common<br>
+    songName: `Navratri Nagada Remix<br>
     <div class="subtitle">Sush and Yohan</div>`,
     poster: "Poster/34.jpg",
   },
   {
     id: "a35",
-    songName: `2021 Year End<br>
+    songName: `Anushqa | Something Is Common<br>
     <div class="subtitle">Sush and Yohan</div>`,
     poster: "Poster/35.jpg",
+  },
+  {
+    id: "a36",
+    songName: `2021 Year End<br>
+    <div class="subtitle">Sush and Yohan</div>`,
+    poster: "Poster/36.jpg",
   },
   // {
   //   id: "a36",
@@ -339,35 +343,36 @@ pop_art_left.addEventListener("click", () => {
   Artists_bx.scrollLeft -= 330;
 });
 
-function close() {
-  document.getElementById("login").style.display = "none";
-}
+// Earlier Login system 
+// function close() {
+//   document.getElementById("login").style.display = "none";
+// }
 
-function openloginpage() {
-  document.getElementById("login").style.display = "flex";
-}
+// function openloginpage() {
+//   document.getElementById("login").style.display = "flex";
+// }
 
-document.getElementById("form").addEventListener("submit", function (event) {
-  event.preventDefault();
-  var email = document.getElementById("email").value;
-  var pwd = document.getElementById("password").value;
+// document.getElementById("form").addEventListener("submit", function (event) {
+//   event.preventDefault();
+//   var email = document.getElementById("email").value;
+//   var pwd = document.getElementById("password").value;
 
-  if (email == "") {
-    alert("Please enter your name");
-  } else if (pwd == "") {
-    alert("Please enter Password");
-  } else if (email == "admin@admin.com") {
-    close();
-  } else if (pwd == "admin") {
-    close();
-  } else if (document.getElementById("t5").value.length < 4) {
-    alert("Password minimum length is 5");
-  } else if (document.getElementById("t5").value.length > 12) {
-    alert("Password max length is 12");
-  } else {
-    close();
-  }
-});
+//   if (email == "") {
+//     alert("Please enter your name");
+//   } else if (pwd == "") {
+//     alert("Please enter Password");
+//   } else if (email == "admin@admin.com") {
+//     close();
+//   } else if (pwd == "admin") {
+//     close();
+//   } else if (document.getElementById("t5").value.length < 4) {
+//     alert("Password minimum length is 5");
+//   } else if (document.getElementById("t5").value.length > 12) {
+//     alert("Password max length is 12");
+//   } else {
+//     close();
+//   }
+// });
 
 //dont above
 
